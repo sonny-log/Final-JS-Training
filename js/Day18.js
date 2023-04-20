@@ -58,10 +58,7 @@ function add_drag_event2(list) {
     card.children[0].addEventListener('dragstart', (e) => {
 
       let start_ID = card.id;
-
-      //substr.s
-
-      start_index = list.findIndex(obj => obj.wrap == start_ID.substr(5, 1) && obj.card == start_ID.substring(7));
+      start_index = list.findIndex(obj => obj.wrap == drop_ID.substring(5, 6) && obj.card == start_ID.substring(7));
       console.log('dragstart: ', list[start_index]);
 
       e.dataTransfer.setData('Text', card.children[0].style.backgroundImage);
@@ -78,7 +75,7 @@ function add_drag_event2(list) {
       let data = e.dataTransfer.getData('Text');
 
       let drop_ID = card.id;
-      let drop_index = list.findIndex(obj => obj.wrap == drop_ID.substr(5, 1) && obj.card == drop_ID.substring(7));
+      let drop_index = list.findIndex(obj => obj.wrap == drop_ID.substring(5, 6) && obj.card == drop_ID.substring(7));
       console.log('dropEnd: ', list[start_index]);
 
       if (e.target.style.backgroundImage == 'unset') {
