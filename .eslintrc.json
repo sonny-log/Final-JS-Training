@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "comma-spacing": [2, { "before": false, "after": true }], // 쉼표 앞에 공백 비허용, 뒤에 허용
+        "quotes": [2, "single", { "allowTemplateLiterals": true }], // '' , `` 허용
+        "func-call-spacing": [2, "never"],// 함수 호출 할때 괄호 앞 공백 비허용
+        "computed-property-spacing": [2, "never"],// 괄호안 일정간격 공백 비허용
+        "max-len": [0, { "code": 100, "tabWidth": 2 ,"ignoreStrings": true}], // 최대 100 까지, tab은 2 , 문자열은 최대값 무시
+        "semi-spacing": [2, { "before": false, "after": true }],// 세미콜론 공백 비허용
+        "no-unused-vars": [0], // 사용되지 않는 변수 에러 
+        "no-undef": [0], // 사용되지 않는 함수 에러
+        "operator-linebreak": [2, "none", { "overrides": { "+=": "after" } }], // 연산자 줄바꿈 하지않음, += 는 예외
+        "no-multi-spaces" : [2, {"ignoreEOLComments": true}],// 공백 여러개 비허용, 주석 앞은 예외
+        "semi-style": [2, "last"],// 세미콜론은 마지막에?
+        "space-in-parens":[2,"never"], // 공백안 괄호 비허용
+        "space-before-blocks":[2],// 블록 앞 선행 공백 필수
+        "no-empty": [0], // if 문이나 {} 안에 공백 허용
+        "space-infix-ops": [2] // 연산자 앞뒤 공백 비허용
+    }
+}
